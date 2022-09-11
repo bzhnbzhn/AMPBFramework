@@ -19,7 +19,8 @@ public class LoginPageTest extends BaseTest {
         driver.get(LoginPage.LOGIN_PAGE_LINK);
         loginPage = new LoginPage(driver);
         loginPage.singIn(User.getUserWithValidCredentials());
-        Assertions.assertEquals(LoginPage.LOGIN_SUCCESS_LINK, driver.getCurrentUrl());
+        Assertions.assertEquals(LoginPage.LOGIN_SUCCESS_LINK, driver.getCurrentUrl(),
+                "User was not sing in with valid credentials");
     }
 
     @Test
@@ -28,6 +29,7 @@ public class LoginPageTest extends BaseTest {
         driver.get(LoginPage.LOGIN_PAGE_LINK);
         loginPage = new LoginPage(driver);
         loginPage.singIn(User.getUserWithUnValidPassword());
-        Assertions.assertEquals(LoginPage.PASSWORD_INCORRECT_MASSAGE, loginPage.getPasswordIncorrectMassage());
+        Assertions.assertEquals(LoginPage.PASSWORD_INCORRECT_MASSAGE, loginPage.getPasswordIncorrectMassage(),
+                "Error massage was not shown when incorrect password was entered");
     }
 }

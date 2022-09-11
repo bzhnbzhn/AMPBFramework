@@ -21,6 +21,7 @@ public class OrderStatusPage {
         orderStatusPage = new abstractclasses.page.OrderStatusPage(driver);
         navigationBar.openOrderStatusPage();
         orderStatusPage.getStatusOfUserOrder(User.COMPETED_ORDER_NUMBER, User.USER_HOW_MADE_ORDER_EMAIL);
-        Assertions.assertTrue(orderStatusPage.getOrderNumber().contains(User.COMPETED_ORDER_NUMBER));
+        Assertions.assertTrue(orderStatusPage.getOrderNumber().contains(User.COMPETED_ORDER_NUMBER),
+                "Order status was not verified");
     }
 }
