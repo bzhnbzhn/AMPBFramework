@@ -1,14 +1,10 @@
-package abstractclasses.page;
+package desktop.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class OrderStatusPage {
-
-    WebDriver driver;
+public class OrderStatusPage extends AbstractPage {
 
     @FindBy(id = "orderNumber")
     WebElement orderNumberField;
@@ -23,16 +19,15 @@ public class OrderStatusPage {
     WebElement orderNumber;
 
     public OrderStatusPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     public void getStatusOfUserOrder(String orderNumber, String userEmail ) {
-        this.orderNumberField.sendKeys(orderNumber);
-        this.emailUsedOnOrder.sendKeys(userEmail);
-        this.viewOrderInfoButton.click();
+        orderNumberField.sendKeys(orderNumber);
+        emailUsedOnOrder.sendKeys(userEmail);
+        viewOrderInfoButton.click();
     }
     public String getOrderNumber(){
-        return this.orderNumber.getText();
+        return orderNumber.getText();
     }
 }

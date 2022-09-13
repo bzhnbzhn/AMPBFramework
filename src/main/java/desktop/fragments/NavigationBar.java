@@ -1,4 +1,4 @@
-package abstractclasses.fragment;
+package desktop.fragments;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,11 +28,11 @@ public class NavigationBar {
     }
 
     public void openWishListPage(){
-        this.wishListIcon.click();
+        wishListIcon.click();
     }
 
     public void openLoginPage(){
-        this.loginIcon.click();
+        loginIcon.click();
     }
 
 }

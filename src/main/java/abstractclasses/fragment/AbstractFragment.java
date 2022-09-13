@@ -7,6 +7,6 @@ public abstract class AbstractFragment {
     private WebElement rootElement;
 
     public void setRootElement(WebElement element) {
-        this.rootElement = element;
+        rootElement = element;
     }
 }

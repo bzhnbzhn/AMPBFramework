@@ -1,15 +1,15 @@
 package test;
 
 import driver.WebDriverSingleton;
-import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.AfterAll;
 import org.openqa.selenium.WebDriver;
 
 public class BaseTest {
 
-    WebDriver driver = WebDriverSingleton.getInstance();
+    static WebDriver driver = WebDriverSingleton.getInstance();
 
-    @AfterEach
-    public void tearDown() {
+    @AfterAll
+    public static void tearDown() {
         driver.quit();
     }
 }
