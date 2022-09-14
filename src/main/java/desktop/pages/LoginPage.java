@@ -1,5 +1,6 @@
 package desktop.pages;
 
+import abstractclasses.page.AbstractPage;
 import constants.User;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

@@ -1,11 +1,12 @@
 package desktop.fragments;
 
+import abstractclasses.fragment.AbstractFragment;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class NavigationBar {
+public class NavigationBar extends AbstractFragment {
 
     WebDriver driver;
 
@@ -19,9 +20,9 @@ public class NavigationBar {
     WebElement loginIcon;
 
     public NavigationBar(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
+
 
     public void openOrderStatusPage(){
         orderStatusIcon.click();
